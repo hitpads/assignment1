@@ -1,12 +1,17 @@
 package models;
 
 public class Point {
-    private double x;
-    private double y;
+    private final double x;
+    private final double y;
 
-    // constructor having both parameters
+    public Point(double x, double y) {
+        this.x = x;
+        this.y = y;
+    }
 
-    // distance(Point dest) - distance from current point to the dest point
-
-    // toString
+    public double distanceTo(Point other) {
+        double deltaX = other.x- this.x;
+        double deltaY = other.y- this.y;
+        return Math.sqrt(deltaX * deltaX + deltaY * deltaY);
+    }
 }
